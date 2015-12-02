@@ -1,68 +1,63 @@
 #include <iostream>
+#include <typeinfo>
+#include <string>
 
 using namespace std;
 
 template <typename T>
-void swap(T const&, T const&);
-template <typename T>
-void print(T const&, T const&);
-
-
-
-
-
-template <typename T>
-void swap(T const& a, T const& b) {
-    T tmp = 0;
+int compare(T const& x, T const& y) {
+    string data_type = typeid(x).name();
     
-    tmp = a;
-    a   = b;
-    b   = tmp;
+    if (data_type.find("string") == string::npos) {
+        return (x < y);
+    }
+    
+    return x.compare(y);
 }
 
 template <typename T>
-void print(T const& a, T const& b) {
-    cout << "a=" << a << " - b=" << b << endl;
-}
-
-template <class K, class V>
-class Data {
-private:
-    K key;
-    V value;
+void swap(T& x, T& y) {
+    T tmp;
     
-public:
-    Data(K key, V value);
-    void setValue(K key, V value);
-    void print();
-};
-
-template <class K, class V>
-Data<K,V>::Data(K key, V value) {
-    this->key     = key;
-    this->value   = value;
+    tmp = x;
+    x   = y;
+    y   = tmp;
 }
 
-template <class K, class V>
-void Data<K,V>::setValue(K key, V value) {
-    this->key     = key;
-    this->value   = value;
+template <typename T>
+void sort(T*& data) {
+    int size = sizeof(data);
+    int i    = 0, j=0;
+    T   t1,t2;
     
-    cout << key << ":" << value << endl;
+    for (i= 0; i<size-1; i++) {
+        t1 = data[i];
+        for (j=i+1; j<size; j++) {
+            t2 = data[j];
+            if (compate(t1,t2) == -1) {
+                swap(t1,t2);
+            }
+        }
+    }
 }
 
-template <class K, class V>
-void Data<K,V>::print() {
-    cout << key << ":" << value << endl;
+template <typename T>
+void print(T* const& data) {
+    int size = sizeof(data);
+    int i    = 0;
+    
+    for (i=0; i<size; i++) {
+        cout << "Array[" << i << "]=" << data[i];
+    }
 }
+
+
 
 int main(int argc, char * argv[]) {
     
-    Data<int, int> *data = new Data<int,int>(1,2);
-//    data.setValue(1, 1);
+    int data[10] = {9,8,7,6,5,4,3};
     
-    data->print();
-    
+    print(data);
     return 0;
 }
 
