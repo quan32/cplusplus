@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E2C454B01C04BB74005498BF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2C454AF1C04BB74005498BF /* main.cpp */; };
+		E94A97471C0EAA1B00A89795 /* array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E94A97461C0EAA1B00A89795 /* array.cpp */; };
+		E94A974A1C0EC77B00A89795 /* simple_array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E94A97491C0EC77B00A89795 /* simple_array.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		E2C454AC1C04BB74005498BF /* C++ */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "C++"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2C454AF1C04BB74005498BF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E94A97431C0EA49600A89795 /* array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = array.h; sourceTree = "<group>"; };
+		E94A97461C0EAA1B00A89795 /* array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = array.cpp; sourceTree = "<group>"; };
+		E94A97481C0EC6D300A89795 /* simple_array.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simple_array.h; sourceTree = "<group>"; };
+		E94A97491C0EC77B00A89795 /* simple_array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = simple_array.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +63,21 @@
 		E2C454AE1C04BB74005498BF /* C++ */ = {
 			isa = PBXGroup;
 			children = (
+				E94A973D1C0E9B2F00A89795 /* library */,
 				E2C454AF1C04BB74005498BF /* main.cpp */,
 			);
 			path = "C++";
+			sourceTree = "<group>";
+		};
+		E94A973D1C0E9B2F00A89795 /* library */ = {
+			isa = PBXGroup;
+			children = (
+				E94A97431C0EA49600A89795 /* array.h */,
+				E94A97461C0EAA1B00A89795 /* array.cpp */,
+				E94A97481C0EC6D300A89795 /* simple_array.h */,
+				E94A97491C0EC77B00A89795 /* simple_array.cpp */,
+			);
+			name = library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,7 +136,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94A974A1C0EC77B00A89795 /* simple_array.cpp in Sources */,
 				E2C454B01C04BB74005498BF /* main.cpp in Sources */,
+				E94A97471C0EAA1B00A89795 /* array.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +225,7 @@
 		E2C454B41C04BB74005498BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -212,6 +233,7 @@
 		E2C454B51C04BB74005498BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -235,6 +257,7 @@
 				E2C454B51C04BB74005498BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
